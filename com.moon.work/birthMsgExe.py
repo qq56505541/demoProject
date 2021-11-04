@@ -87,7 +87,7 @@ def sendMsg(msg):
 
     webhook = "https://oapi.dingtalk.com/robot/send?access_token" \
               "=da2be94addd339065881ccdb9e73a9f62d2c5fba63392b6cfa5c080f6a566763&timestamp=" + timestamp + "&sign=" + sign
-    r = requests.post(webhook, data=json.dumps(data), headers=headers)
+    requests.post(webhook, data=json.dumps(data), headers=headers)
 
 
 now = time.strftime("%Y/%m/%d", time.localtime())
