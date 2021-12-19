@@ -78,7 +78,7 @@ def sendMsg(msg):
         }
     }
     timestamp = str(round(time.time() * 1000))
-    secret = 'SEC97cf7cba9c67f2bb6c74214777c3439272acf7c4e1ee70ead6411e13fa0cfeb5'
+    secret = 'SEC07640358776a56534d8ea02d4ca4913f1c2e7d688a082ef306d5e78efa4cb232'
     secret_enc = secret.encode('utf-8')
     string_to_sign = '{}\n{}'.format(timestamp, secret)
     string_to_sign_enc = string_to_sign.encode('utf-8')
@@ -86,7 +86,8 @@ def sendMsg(msg):
     sign = urllib.parse.quote_plus(base64.b64encode(hmac_code))
 
     webhook = "https://oapi.dingtalk.com/robot/send?access_token" \
-              "=da2be94addd339065881ccdb9e73a9f62d2c5fba63392b6cfa5c080f6a566763&timestamp=" + timestamp + "&sign=" + sign
+              "=9d53fb7f9e571a154fbaaf1943957601f2d209dea3a8c806f3d99a4120d68059&timestamp=" + timestamp + "&sign=" +\
+              sign
     requests.post(webhook, data=json.dumps(data), headers=headers)
 
 
